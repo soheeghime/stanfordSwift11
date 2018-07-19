@@ -17,7 +17,6 @@ class ViewController: UIViewController {
         }
     }
     
-    
     @IBOutlet weak var flipCountLable: UILabel!
     
     @IBOutlet var cardButtons: [UIButton]!
@@ -29,7 +28,6 @@ class ViewController: UIViewController {
             print("cardNumber \(cardNumber)")
             game.chooseCard(at: cardNumber)
             updateViewFromModel()
-//            flipCard(withEmoji: emojiChoices[cardNumber], on: sender)
         }else{
             print("chosen card was not in cardButtons")
         }
@@ -62,18 +60,5 @@ class ViewController: UIViewController {
         }
         return emoji[card.identifier] ?? "?"
     }
-    
-//    func flipCard(withEmoji emoji: String, on button: UIButton){
-//        print("flipCard emoji: \(emoji)")
-//
-//        if button.currentTitle == emoji{
-//            button.setTitle("", for: .normal)
-//            button.backgroundColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
-//        }else{
-//            button.setTitle(emoji, for: .normal)
-//            button.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-//        }
-//
-//    }
 }
 
