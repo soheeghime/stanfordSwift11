@@ -50,15 +50,17 @@ class ViewController: UIViewController {
         }
     }
     
-    var emojiChoices: [String] = ["👻","🎃","🐱","🐥","🌚","🥓","🥃","👻","🎃"]
-    var emoji = Dictionary<Int, String>()//////////
+    var emojiChoices: [String] = ["👻","🎃","🐱","🐥","🌚","🥓","🥃"]
+//    var emojiChoices = "👻🎃🐱🐥🌚🥓🥃"
+    var emoji = [Card:String]()
     
     func emoji(for card: Card) -> String{
-        if emoji[card.identifier] == nil , emojiChoices.count > 0{
+        if emoji[card] == nil , emojiChoices.count > 0{
             let ramdomIndex = Int(arc4random_uniform(UInt32(emojiChoices.count)))
-            emoji[card.identifier] = emojiChoices.remove(at: ramdomIndex)
+//            let randomStringIndex = emojiChoices.index(emojiChoices.startIndex, offsetBy:emojiChoices.count.arc4random)
+            emoji[card] = emojiChoices.remove(at: ramdomIndex)
         }
-        return emoji[card.identifier] ?? "?"
+        return emoji[card] ?? "?"
     }
 }
 
